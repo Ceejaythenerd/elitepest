@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Elite Pest Control - South Africa's premier pest management solution. Molecular science meets clinical precision.">
+    <title>Elite Pest Control | Professional Environment Solutions South Africa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            /* Extracted from Logo */
+            --elite-primary: #0f4c81;
+            /* The Deep Royal Blue */
+            --elite-secondary: #428bca;
+            /* The Lighter Sky Blue */
+            --elite-accent: #e3f2fd;
+            /* Very Light Blue Background */
+            --crisp-white: #ffffff;
+            --slate-dark: #1e293b;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--crisp-white);
+            color: var(--slate-dark);
+        }
+
+        /* Updated Mesh Background to Blue Scheme */
+        .mesh-vibrant {
+            background-color: #ffffff;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(15, 76, 129, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(66, 139, 202, 0.08) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(15, 76, 129, 0.03) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 30px 60px -12px rgba(15, 76, 129, 0.15);
+        }
+
+        .compliance-vault {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #f1f5f9;
+        }
+
+        .compliance-vault:hover {
+            transform: translateY(-8px);
+            border-color: var(--elite-secondary);
+            box-shadow: 0 20px 40px -10px rgba(66, 139, 202, 0.2);
+        }
+
+        /* Diagonal geometric pattern overlay for sections */
+        .geometric-overlay {
+            background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent);
+            background-size: 20px 20px;
+        }
+
+        .btn-elite {
+            background: linear-gradient(135deg, var(--elite-secondary) 0%, var(--elite-primary) 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-elite:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px -5px rgba(15, 76, 129, 0.4);
+        }
+
+        .pulse-status {
+            animation: pulse-ring 2s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(66, 139, 202, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(66, 139, 202, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(66, 139, 202, 0);
+            }
+        }
+
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .menu-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden mesh-vibrant">
+
+    <!-- Professional Navigation -->
+    <header class="fixed top-0 w-full z-[100] bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+            <!-- Logo Section -->
+            <div class="flex items-center gap-4 cursor-pointer">
+                <div class="h-16 w-16 relative group">
+                    <img src="logo.jpg" alt="Elite Pest Control Logo"
+                        class="w-full h-full object-contain drop-shadow-lg transition-transform group-hover:scale-105">
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center gap-10">
+                <nav class="flex gap-8 text-[11px] font-black uppercase tracking-widest text-slate-500">
+                    <a href="#solutions" class="hover:text-[#428bca] transition duration-300">The Solutions</a>
+                    <a href="#compliance" class="hover:text-[#428bca] transition duration-300">Compliance</a>
+                    <a href="#regions" class="hover:text-[#428bca] transition duration-300">Regions</a>
+                </nav>
+                <div class="h-6 w-[1px] bg-slate-200"></div>
+                <div class="flex items-center gap-6">
+                    <a href="tel:0313320570" class="flex items-center gap-2 text-sm font-bold text-slate-900 group">
+                        <i data-lucide="phone" class="w-4 h-4 text-[#428bca] group-hover:animate-bounce"></i>
+                        031 332 0570
+                    </a>
+                    <a href="#quote"
+                        class="btn-elite text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:brightness-110">
+                        Start Site Audit
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="lg:hidden p-2 text-[#0f4c81]">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[150] bg-white transform translate-x-full flex flex-col pt-32 px-10 gap-8">
+        <button id="close-menu-btn" class="absolute top-8 right-6 p-2 text-slate-400 hover:text-[#0f4c81]">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+
+        <nav class="flex flex-col gap-8">
+            <a href="#solutions" class="mobile-link text-3xl font-black text-slate-900 tracking-tight">The Solutions</a>
+            <a href="#compliance" class="mobile-link text-3xl font-black text-slate-900 tracking-tight">Compliance
+                Setup</a>
+            <a href="#regions" class="mobile-link text-3xl font-black text-slate-900 tracking-tight">Service Regions</a>
+        </nav>
+
+        <div class="mt-auto mb-12 space-y-6">
+            <a href="#quote"
+                class="mobile-link btn-elite w-full block text-center text-white py-5 rounded-2xl text-sm font-black uppercase tracking-widest">
+                Start Audit Now
+            </a>
+            <div class="flex justify-center gap-8 text-[#0f4c81]">
+                <a href="tel:0313320570" class="flex flex-col items-center gap-2">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center"><i
+                            data-lucide="phone" class="w-5 h-5"></i></div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest">Call</span>
+                </a>
+                <a href="https://wa.me/27821234567" class="flex flex-col items-center gap-2">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center"><i
+                            data-lucide="message-square" class="w-5 h-5"></i></div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest">Chat</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- High-Impact Hero with Logo Theme -->
+        <section class="relative min-h-screen flex items-center pt-32 pb-16 overflow-hidden">
+            <!-- Geometric Background Decoration (Logo Inspired) -->
+            <div class="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none hidden lg:block">
+                <div class="absolute right-0 top-20 w-96 h-96 bg-[#428bca] transform rotate-45 rounded-[3rem]"></div>
+                <div class="absolute right-40 top-60 w-96 h-96 bg-[#0f4c81] transform rotate-45 rounded-[3rem] -z-10">
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16 items-center relative z-10">
+
+                <div class="lg:col-span-7 space-y-12 animate-in fade-in slide-in-from-left duration-1000">
+
+
+                    <div
+                        class="inline-flex items-center gap-3 bg-blue-50/50 border border-blue-100 px-4 py-2 rounded-2xl shadow-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-[#428bca] pulse-status"></span>
+                        <span class="text-[10px] font-black text-[#0f4c81] uppercase tracking-widest">The Best In Pest
+                            Control</span>
+                    </div>
+
+                    <h1
+                        class="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 leading-[0.95] tracking-tighter">
+                        Total Property <br>
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-[#0f4c81] to-[#428bca]">Sterilization.</span>
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-slate-500 max-w-xl font-medium leading-relaxed">
+                        South Africa's authoritative firm for high-compliance environment management. We integrate
+                        molecular science with clinical precision to protect your home and business.
+                    </p>
+
+                    <div class="flex flex-wrap gap-8 items-center pt-4">
+                        <div class="flex -space-x-4">
+                            <!-- Updated Stat Bubbles to Blue Theme -->
+                            <div
+                                class="w-14 h-14 rounded-full bg-slate-100 border-4 border-white flex items-center justify-center font-bold text-slate-900 shadow-sm">
+                                30+</div>
+                            <div
+                                class="w-14 h-14 rounded-full bg-[#0f4c81] border-4 border-white flex items-center justify-center text-white shadow-sm">
+                                <i data-lucide="award" class="w-6 h-6"></i>
+                            </div>
+                            <div
+                                class="w-14 h-14 rounded-full bg-[#428bca] border-4 border-white flex items-center justify-center text-white shadow-sm">
+                                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div class="text-sm font-bold text-slate-400">
+                            Years of Industry Integrity <br>
+                            <span class="text-slate-900 uppercase text-xs tracking-widest">SAPCA Registered • ISPM-15
+                                Certified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Quote Form -->
+                <div class="lg:col-span-5 relative">
+                    <div class="glass-panel p-8 md:p-12 rounded-[3.5rem] relative z-10 border-white/50">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-black text-[#0f4c81] mb-2">Initiate Audit</h3>
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Technical
+                                Inspection Dispatch</p>
+                        </div>
+
+                        <form id="quote" class="space-y-5">
+                            <div class="space-y-1">
+                                <label
+                                    class="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2">Client
+                                    Name</label>
+                                <input type="text" placeholder="Full Name" required
+                                    class="w-full bg-white border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-[#428bca] transition text-sm font-bold shadow-sm">
+                            </div>
+                            <div class="space-y-1">
+                                <label
+                                    class="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2">Contact
+                                    Number</label>
+                                <input type="tel" placeholder="Phone Number" required
+                                    class="w-full bg-white border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-[#428bca] transition text-sm font-bold shadow-sm">
+                            </div>
+                            <div class="space-y-1">
+                                <label
+                                    class="text-[10px] font-black text-slate-400 uppercase tracking-widest pl-2">Service
+                                    Region</label>
+                                <div class="relative">
+                                    <select
+                                        class="w-full bg-white border border-slate-100 rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-[#428bca] transition text-sm font-bold appearance-none shadow-sm cursor-pointer">
+                                        <option>Durban: Morningside / Umhlanga Hub</option>
+                                    </select>
+                                    <i data-lucide="chevron-down"
+                                        class="absolute right-6 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none"></i>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full bg-[#0f4c81] text-white py-5 rounded-2xl font-black text-xs uppercase tracking-[0.4em] hover:bg-[#003366] transition transform active:scale-95 shadow-xl shadow-blue-900/10">
+                                Request Dispatch
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compliance Vault Section -->
+        <section id="compliance" class="py-24 bg-white relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <!-- Section Header -->
+                <div class="text-center mb-16">
+                    <h2 class="text-[10px] font-black text-[#428bca] uppercase tracking-[0.4em] mb-4">The Standard</h2>
+                    <h3 class="text-3xl md:text-4xl font-black text-slate-900">Regulatory Compliance.</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Standardized Cards to Blue Theme -->
+                    <div
+                        class="compliance-vault bg-slate-50 p-8 rounded-[2rem] group hover:bg-gradient-to-br hover:from-white hover:to-blue-50">
+                        <div
+                            class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#0f4c81] mb-6 group-hover:scale-110 transition">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-black text-slate-900 mb-2 tracking-tight">PCO P17935</h4>
+                        <p class="text-xs text-slate-500 font-medium leading-relaxed">Mandatory Professional PCO
+                            Registration ensuring SABS/SANS chemical application standards.</p>
+                    </div>
+
+                    <div
+                        class="compliance-vault bg-slate-50 p-8 rounded-[2rem] group hover:bg-gradient-to-br hover:from-white hover:to-blue-50">
+                        <div
+                            class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#428bca] mb-6 group-hover:scale-110 transition">
+                            <i data-lucide="flame" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-black text-slate-900 mb-2 tracking-tight">ISPM-15</h4>
+                        <p class="text-xs text-slate-500 font-medium leading-relaxed">Certified Heat Treatment providers
+                            for global export pallets and Durban port logistics.</p>
+                    </div>
+
+                    <div
+                        class="compliance-vault bg-slate-50 p-8 rounded-[2rem] group hover:bg-gradient-to-br hover:from-white hover:to-blue-50">
+                        <div
+                            class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#0f4c81] mb-6 group-hover:scale-110 transition">
+                            <i data-lucide="file-check" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-black text-slate-900 mb-2 tracking-tight">HACCP Ready</h4>
+                        <p class="text-xs text-slate-500 font-medium leading-relaxed">Audit-standard documentation
+                            protocols for the food processing and retail industries.</p>
+                    </div>
+
+                    <div
+                        class="compliance-vault bg-slate-50 p-8 rounded-[2rem] group hover:bg-gradient-to-br hover:from-white hover:to-blue-50">
+                        <div
+                            class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-slate-900 mb-6 group-hover:scale-110 transition">
+                            <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-black text-slate-900 mb-2 tracking-tight">SAPCA Member</h4>
+                        <p class="text-xs text-slate-500 font-medium leading-relaxed">Corporate membership in the South
+                            African Pest Control Association.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Matrix: Dark Blue Theme -->
+        <section id="solutions" class="py-32 bg-[#0f4c81] text-white relative overflow-hidden geometric-overlay">
+
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="text-center mb-20 space-y-6">
+                    <h2 class="text-[10px] font-black text-[#428bca] uppercase tracking-[0.4em]">Defense Matrix</h2>
+                    <p class="text-4xl md:text-5xl font-black tracking-tighter">Engineered Eradication.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Termite Treatment -->
+                    <div class="p-8 border border-white/10 rounded-[2.5rem] hover:bg-white/5 transition-colors group">
+                        <div
+                            class="w-12 h-12 bg-white/10 rounded-2xl border border-white/20 flex items-center justify-center text-white mb-6 group-hover:bg-[#428bca] transition">
+                            <i data-lucide="bug" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-black mb-2">Termite Treatment</h3>
+                        <p class="text-blue-200 text-xs leading-relaxed mb-6">Specialized subterranean and dry-wood
+                            termite eradication with long-term guaranteed protection.</p>
+                        <div
+                            class="flex items-center gap-2 text-[9px] font-black text-[#428bca] uppercase tracking-widest">
+                            <i data-lucide="shield" class="w-3 h-3"></i>
+                            Guaranteed
+                        </div>
+                    </div>
+
+                    <!-- Wood Borer -->
+                    <div class="p-8 border border-white/10 rounded-[2.5rem] hover:bg-white/5 transition-colors group">
+                        <div
+                            class="w-12 h-12 bg-white/10 rounded-2xl border border-white/20 flex items-center justify-center text-white mb-6 group-hover:bg-[#428bca] transition">
+                            <i data-lucide="scan-search" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-black mb-2">Wood Borer</h3>
+                        <p class="text-blue-200 text-xs leading-relaxed mb-6">Certified inspections and treatments for
+                            wood-destroying organisms in furniture and structural timber.</p>
+                        <div
+                            class="flex items-center gap-2 text-[9px] font-black text-[#428bca] uppercase tracking-widest">
+                            <i data-lucide="file-search" class="w-3 h-3"></i>
+                            Certificate
+                        </div>
+                    </div>
+
+                    <!-- Marine & Warehouse -->
+                    <div
+                        class="p-8 bg-white text-[#0f4c81] rounded-[2.5rem] shadow-2xl relative group transform md:-translate-y-4">
+                        <div
+                            class="w-12 h-12 bg-[#0f4c81] rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg">
+                            <i data-lucide="container" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-black mb-2">Marine & Warehouse</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-6">Industrial-grade fumigation for shipping
+                            containers, silos, and large-scale storage facilities.</p>
+                        <div
+                            class="flex items-center gap-2 text-[9px] font-black text-[#428bca] uppercase tracking-widest">
+                            <i data-lucide="ship" class="w-3 h-3"></i>
+                            ISPM-15
+                        </div>
+                    </div>
+
+                    <!-- Bird Proofing -->
+                    <div class="p-8 border border-white/10 rounded-[2.5rem] hover:bg-white/5 transition-colors group">
+                        <div
+                            class="w-12 h-12 bg-white/10 rounded-2xl border border-white/20 flex items-center justify-center text-white mb-6 group-hover:bg-[#428bca] transition">
+                            <i data-lucide="feather" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-black mb-2">Bird Proofing</h3>
+                        <p class="text-blue-200 text-xs leading-relaxed mb-6">Humane and effective exclusion systems
+                            including netting and spiking for commercial buildings.</p>
+                        <div
+                            class="flex items-center gap-2 text-[9px] font-black text-[#428bca] uppercase tracking-widest">
+                            <i data-lucide="check" class="w-3 h-3"></i>
+                            Non-Lethal
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regional Presence -->
+        <section id="regions" class="py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-center">
+                <div class="space-y-10">
+                    <div class="space-y-4">
+                        <h2 class="text-xs font-black text-[#428bca] uppercase tracking-[0.4em]">The Grid</h2>
+                        <p class="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter">Strategic Coverage.
+                        </p>
+                    </div>
+                    <p class="text-lg text-slate-500 font-medium leading-relaxed">
+                        South African pest profiles differ by region. Elite Pest Control provides localized,
+                        climate-aware treatments for the humid Durban coastline.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-8 pt-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 rounded-full bg-[#428bca]"></div>
+                                <span class="text-sm font-black uppercase tracking-widest text-[#0f4c81]">Durban
+                                    Hub</span>
+                            </div>
+                            <p class="text-xs text-slate-500 font-medium">Umhlanga, Morningside, Pinetown, Westville,
+                                Bluff.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div
+                        class="w-full aspect-video bg-slate-900 rounded-[3rem] overflow-hidden relative shadow-2xl group border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=800"
+                            class="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 transition duration-1000">
+                        <div class="absolute inset-0 flex items-center justify-center text-white">
+                            <div class="text-center group-hover:scale-110 transition">
+                                <i data-lucide="map-pin"
+                                    class="w-16 h-16 mx-auto mb-4 text-[#428bca] animate-bounce"></i>
+                                <p class="text-2xl font-black italic">ACTIVE MAP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Technical Footer -->
+    <footer class="bg-slate-50 pt-24 pb-12 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2 space-y-8">
+                    <div class="flex items-center gap-3">
+                        <!-- Tiny Logo Footer -->
+                        <div class="w-10 h-10 rounded-lg overflow-hidden shadow-sm">
+                            <img src="logo.jpg" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm max-w-sm font-medium leading-relaxed uppercase tracking-widest">
+                        Values driven protection. <br>Registered PCO: P17935. Est. 1993.
+                    </p>
+                    <div
+                        class="flex items-start gap-3 text-slate-500 text-xs font-bold uppercase tracking-widest max-w-xs">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-[#428bca] flex-shrink-0 mt-0.5"></i>
+                        <span>314 Mathews Meyiwa Road,<br>Windermere, Durban,<br>South Africa</span>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h5 class="text-[10px] font-black text-[#428bca] uppercase tracking-widest">Support Hubs</h5>
+                    <ul class="space-y-2 text-xs font-bold text-slate-700">
+                        <li>031 332 0570</li>
+                        <li class="lowercase">elitepestcontrol@telkomsa.net</li>
+                        <li>Durban Morningside</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h5 class="text-[10px] font-black text-[#428bca] uppercase tracking-widest">Authority</h5>
+                    <ul class="space-y-2 text-xs font-bold text-slate-700">
+                        <li>PCO: P17935</li>
+                        <li>SAPCA Corporate</li>
+                        <li>ISPM-15 Certified</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] font-black text-slate-300 uppercase tracking-widest">
+                <p>© 2024 Elite Pest Control.</p>
+                <div class="flex gap-8">
+                    <a href="https://wa.me/27821234567" class="text-[#0f4c81] flex items-center gap-2 hover:opacity-80">
+                        <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp Command Center
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Action (Refined) -->
+    <a href="https://wa.me/27821234567" target="_blank"
+        class="fixed bottom-6 right-6 z-[110] bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center group hover:scale-110 transition duration-300">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- Mobile Action Bar (Visible only on very small screens if menu closed, but mostly replaced by the new header) -->
+    <!-- Removed sticky bottom bar in favor of clean design + fab -->
+
+    <script>
+        lucide.createIcons();
+
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section, .compliance-vault').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const body = document.body;
+
+        function toggleMenu() {
+            const isOpen = !mobileMenu.classList.contains('translate-x-full');
+            if (isOpen) {
+                mobileMenu.classList.add('translate-x-full');
+                body.classList.remove('menu-open');
+            } else {
+                mobileMenu.classList.remove('translate-x-full');
+                body.classList.add('menu-open');
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    </script>
+</body>
+
+</html>
